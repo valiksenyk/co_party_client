@@ -10,7 +10,7 @@
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "importHelpers": true,
-        "strict": true,
+        "strict": false,
         "noFallthroughCasesInSwitch": true,
         "noImplicitReturns": true,
         "noUnusedParameters": true,

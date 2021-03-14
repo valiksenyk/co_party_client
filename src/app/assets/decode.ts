@@ -7,5 +7,5 @@ export function decode(base64: string): ArrayBuffer {
     bytes[i] = binary_string.charCodeAt(i);
   }
 
-  return bytes.buffer;
+  return bytes.buffer as ArrayBuffer;
 }
