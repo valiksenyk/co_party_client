@@ -10,10 +10,13 @@
     "@angular/platform-browser": "8.2.14",
     "@angular/platform-browser-dynamic": "8.2.14",
     "@angular/router": "8.2.14",
+    "@foobar404/wave": "^1.2.7",
     "@ng-web-apis/audio": "^1.5.1",
     "core-js": "2.6.11",
+    "ngx-socket-io": "^3.3.0",
     "node-sass": "^4.12.0",
     "rxjs": "6.5.4",
+    "socket.io": "^4.0.0",
     "tslib": "^1.10.0",
     "zone.js": "0.9.1"
   },

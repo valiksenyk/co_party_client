@@ -12,9 +12,17 @@ import { BeatComponent } from "./beat/beat.component";
 import { ChordsComponent } from "./chords/chords.component";
 import { LeadComponent } from "./lead/lead.component";
 import { SoloComponent } from "./solo/solo.component";
+import {SocketIoConfig, SocketIoModule} from "ngx-socket-io";
+
+const config: SocketIoConfig = { url: 'http://192.168.0.103:3000', options: { path: '/socket.io', transports: ['websocket'] } };
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, WebAudioModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    WebAudioModule,
+    SocketIoModule.forRoot(config)
+  ],
   declarations: [
     AppComponent,
     BeatComponent,

@@ -7,28 +7,28 @@
 		nodes are left out (such as GainNode for volume control).
     </em>
 	</blockquote>
-	<beat [volume]="beat">
+	<beat [volume]="sound.beat">
 		<label>
       <h1>Beat</h1>
-      <input type="range" min="0" max="1" step="0.01" [(ngModel)]="beat" />
+      <input type="range" min="0" max="1" step="0.01" (change)="onSoundParamsChange()" [(ngModel)]="sound.beat" />
     </label>
 	</beat>
-	<chords [volume]="chords">
+	<chords [volume]="sound.chords">
 		<label>
       <h1>Chords</h1>
-      <input type="range" min="0" max="1" step="0.01" [(ngModel)]="chords" />
+      <input type="range" min="0" max="1" step="0.01" (change)="onSoundParamsChange()" [(ngModel)]="sound.chords" />
     </label>
 	</chords>
-	<lead [volume]="lead">
+	<lead [volume]="sound.lead">
 		<label>
       <h1>Lead</h1>
-      <input type="range" min="0" max="1" step="0.01" [(ngModel)]="lead" />      
+      <input type="range" min="0" max="1" step="0.01" (change)="onSoundParamsChange()" [(ngModel)]="sound.lead" />
     </label>
 	</lead>
-	<solo [volume]="solo">
+	<solo [volume]="sound.solo">
 		<label>
       <h1>Solo</h1>
-      <input type="range" min="0" max="1" step="0.01" [(ngModel)]="solo" />
+      <input type="range" min="0" max="1" step="0.01" (change)="onSoundParamsChange()" [(ngModel)]="sound.solo" />
     </label>
 	</solo>
 </section>
