@@ -13,15 +13,25 @@ import { ChordsComponent } from "./chords/chords.component";
 import { LeadComponent } from "./lead/lead.component";
 import { SoloComponent } from "./solo/solo.component";
 import {SocketIoConfig, SocketIoModule} from "ngx-socket-io";
+import {RoomsComponent} from "./pages/rooms/rooms.component";
+import {RouterModule} from "@angular/router";
+import {PlayerPageComponent} from "./pages/player-page/player-page.component";
+import {AppRoutingModule, routes} from "./app-routing-module";
+import {RoomsService} from "./services/rooms.service";
+import {HttpClientModule} from "@angular/common/http";
+import {environment} from "../environments/environment";
 
-const config: SocketIoConfig = { url: 'http://192.168.0.103:3000', options: { path: '/socket.io', transports: ['websocket'] } };
+const config: SocketIoConfig = { url: environment.apiUrl, options: { path: '/socket.io', transports: ['websocket'] } };
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     WebAudioModule,
-    SocketIoModule.forRoot(config)
+    SocketIoModule.forRoot(config),
+    RouterModule.forRoot(routes),
+    AppRoutingModule,
+    HttpClientModule
   ],
   declarations: [
     AppComponent,
@@ -29,8 +39,11 @@ const config: SocketIoConfig = { url: 'http://192.168.0.103:3000', options: { pa
     ChordsComponent,
     LeadComponent,
     SoloComponent,
-    AdsrPipe
+    AdsrPipe,
+    RoomsComponent,
+    PlayerPageComponent
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [RoomsService]
 })
 export class AppModule {}

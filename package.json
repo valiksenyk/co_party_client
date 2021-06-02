@@ -13,8 +13,9 @@
     "@foobar404/wave": "^1.2.7",
     "@ng-web-apis/audio": "^1.5.1",
     "core-js": "2.6.11",
+    "express": "^4.17.1",
     "ngx-socket-io": "^3.3.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.14.1",
     "rxjs": "6.5.4",
     "socket.io": "^4.0.0",
     "tslib": "^1.10.0",
@@ -23,7 +24,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "start:prod": "node server.js",
+    "build": "ng build --configuration=production",
+    "heroku-postbuild": "ng build --configuration=production",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -33,9 +36,9 @@
     "@angular/cli": "~7.0.2",
     "@angular/compiler-cli": "~7.0.0",
     "@angular/language-service": "~7.0.0",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^8.9.5",
     "codelyzer": "~4.5.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
@@ -48,5 +51,9 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.1.1"
+  },
+  "engines": {
+    "node": "10.0.0",
+    "npm": "6.14.6"
   }
 }

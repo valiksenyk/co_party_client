@@ -36,6 +36,8 @@ export class BeatComponent {
   readonly snare$ = this.tick$.pipe(map(tick => tick % 4 >= 2));
 
   constructor(
-    @Inject(TICK) private readonly tick$: Observable<number>
+    @Inject(TICK) private readonly tick$: Observable<number>,
+    @Inject(KICK_BUFFER) readonly kick: Promise<AudioBuffer>,
+    @Inject(SNARE_BUFFER) readonly snare: Promise<AudioBuffer>,
   ) {}
 }

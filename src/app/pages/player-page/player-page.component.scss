@@ -1,0 +1,36 @@
+@import "src/assets/styles/colors";
+
+.music-components {
+  display: none;
+}
+
+label {
+  width: 100%;
+  margin-bottom: 45px;
+}
+
+input {
+  padding: 12px 0;
+}
+
+.material-icons {
+  color: $gray-900;
+}
+
+.btn-container {
+  display: flex;
+  align-items: center;
+}
+
+.back-btn {
+  cursor: pointer;
+}
+
+.users-count {
+  display: flex;
+  align-items: center;
+
+  .count {
+    margin-left: 5px;
+  }
+}

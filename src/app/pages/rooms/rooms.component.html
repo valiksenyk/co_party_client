@@ -1,0 +1,13 @@
+<div class="rooms">
+    <div class="rooms__create">
+        <input type="text" placeholder="Room name" [(ngModel)]="roomName">
+        <button [disabled]="!roomName?.length" (click)="create()">Create</button>
+    </div>
+    <span class="rooms__error" *ngIf="roomNameError">Room with this name already exist</span>
+    <div class="rooms__divider"></div>
+    <div class="rooms__list">
+        <div class="room-item" *ngFor="let room of rooms$ | async" [routerLink]="['/player/' + room._id]">
+            <h3>{{room.name}}</h3>
+        </div>
+    </div>
+</div>

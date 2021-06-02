@@ -22,7 +22,9 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": ["src/style.css"],
+            "styles": [
+              "src/style.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -38,10 +40,10 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
+              "aot": false,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": false
             }
           }
         },
@@ -70,7 +72,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "styles.css"
+              "styles.scss"
             ],
             "scripts": [],
             "assets": [
@@ -94,5 +96,10 @@
       }
     }
   },
-  "defaultProject": "demo"
+  "defaultProject": "demo",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

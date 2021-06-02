@@ -1,0 +1,41 @@
+<div class="btn-container">
+    <span class="material-icons back-btn" [routerLink]="['/rooms']">arrow_back_ios_new</span>
+    <button class="start" (click)="toggle()">{{text}}</button>
+    <span class="users-count">
+        <span class="material-icons">people</span><span class="count">{{clientsCount}}</span>
+    </span>
+</div>
+<section *ngIf="started">
+    <blockquote>
+        <strong>Change values on sliders to mix the music</strong>
+        <em>
+            All changes broadcasting to other room participants via socket.
+        </em>
+    </blockquote>
+    <div class="music-components">
+        <beat [volume]="sound.beat">
+        </beat>
+        <chords [volume]="sound.chords">
+        </chords>
+        <lead [volume]="sound.lead">
+        </lead>
+        <solo [volume]="sound.solo">
+        </solo>
+    </div>
+    <label>
+        <h1>Beat</h1>
+        <input type="range" min="0" max="1" step="0.01" (input)="onSoundParamsChange()" [(ngModel)]="sound.beat" />
+    </label>
+    <label>
+        <h1>Chords</h1>
+        <input type="range" min="0" max="1" step="0.01" (input)="onSoundParamsChange()" [(ngModel)]="sound.chords" />
+    </label>
+    <label>
+        <h1>Lead</h1>
+        <input type="range" min="0" max="1" step="0.01" (input)="onSoundParamsChange()" [(ngModel)]="sound.lead" />
+    </label>
+    <label>
+        <h1>Solo</h1>
+        <input type="range" min="0" max="1" step="0.01" (input)="onSoundParamsChange()" [(ngModel)]="sound.solo" />
+    </label>
+</section>
